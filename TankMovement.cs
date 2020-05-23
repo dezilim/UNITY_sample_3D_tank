@@ -1,6 +1,3 @@
-﻿using System;
-using System.Collections.Specialized;
-using System.Security.Cryptography;
 using UnityEngine;
 
 public class TankMovement : MonoBehaviour
@@ -126,7 +123,7 @@ public class TankMovement : MonoBehaviour
     private void Turn()
     {
         // Adjust the rotation of the tank based on the player's input.
-        float turn = m_TurnInputValue * m_TurnSpeed * TimeoutException.deltaTime;
+        float turn = m_TurnInputValue * m_TurnSpeed * Time.deltaTime;
         // Conversion 
         Quaternion turnRotation = Quaternion.Euler(0f, turn, 0f);
         m_Rigidbody.MoveRotation(m_Rigidbody.rotation * turnRotation);
